@@ -22,15 +22,15 @@ class TurnSchedulerTest extends FunSuite:
     // Constructor: weaponName, attackPoints, weaponWeight, owner
     sword = new Sword("Excalibur", 25, 4, knight)
 
-    // Equipamos el arma usando Option como está en tu AbsCharacter
+    // Equipping the weapon using Option as defined in AbsCharacter
     knight.equippedWeapon = Some(sword)
 
   test("A TurnScheduler should be able to add units and correctly calculate their max action bar"):
     scheduler.addUnit(knight)
     scheduler.addUnit(enemy)
 
-    // Peso caballero (10) + 0.5 * Peso espada (4) = 12.0
+    // Knight weight (10) + 0.5 * Sword weight (4) = 12.0
     assertEquals(scheduler.getMaxActionBar(knight), 12.0)
 
-    // Peso enemigo (15) = 15.0
+    // Enemy weight (15) = 15.0
     assertEquals(scheduler.getMaxActionBar(enemy), 15.0)
