@@ -36,7 +36,6 @@ class TurnScheduler:
    */
   def getMaxActionBar(unit: Entity): Double =
     if unit.isInstanceOf[AbsCharacter] then
-      // Paso extra: hay que forzar la transformación (casteo) manualmente
       val character = unit.asInstanceOf[AbsCharacter]
 
       val weaponWeight = if character.equippedWeapon.isDefined then
