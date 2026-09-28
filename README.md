@@ -10,7 +10,7 @@ El proyecto sigue el patrón arquitectónico MVC solicitado.
 - El controlador contiene al TurnScheduler, cuya responsabilidad es gestionar el estado de la batalla y mandar las entidades del modelo, manteniendo separadas las lógicas de datos y de flujo de juego.
 
 ## Decisiones de diseño
-Para la implementación del TurnScheduler, se tomó la decisión de utilizar Arreglos  y recursividad pura. Se evitó deliberadamente el uso de ciclos iterativos clásicos (`for`, `while`). El filtrado de unidades listas y el ordenamiento por excedente se construyeron de forma manual recursiva. Esto garantiza un control algorítmico estricto.
+Para la implementación del TurnScheduler, se tomó la decisión de utilizar Arreglos  y recursividad pura. Se evitó deliberadamente el uso de ciclos iterativos clásicos (for, while). El filtrado de unidades listas y el ordenamiento por excedente se construyeron de forma manual recursiva. Esto garantiza un control algorítmico estricto.
 
 ## Patrones de diseño
 El código se sustenta fuertemente en el polimorfismo. El programador de turnos no conoce clases concretas, sino que interactúa exclusivamente con la abstracción Entity. Esto respeta el principio de diseño Abierto-Cerrado (Open-Closed Principle, cabe aclarar que lo use de las últimas clases, supuse que se podía), permitiendo que en el futuro se puedan agregar nuevos tipos de unidades sin tener que modificar el código interno del TurnScheduler.
